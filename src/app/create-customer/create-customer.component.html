@@ -1,0 +1,63 @@
+<div>
+    <h1>Create Customer: </h1>
+    <form>
+        <div class='form-gorup'>
+            <label for='customerName'>customerName: </label>
+            <input type='customerName' [(ngModel)]='customer.customerName' placeholder='enter customerName' name='customerName'
+            class='form-control' id='customerName'>
+        </div>
+        <div class='form-gorup'>
+            <label for='fatherName'>fatherName: </label>
+            <input type='fatherName' [(ngModel)]='customer.fatherName' placeholder='enter fatherName' name='fatherName'
+            class='form-control' id='fatherName'>
+        </div>
+        <div class='form-gorup'>
+            <label for='age'>Age: </label>
+            <input type='age' [(ngModel)]='customer.age' placeholder='enter age' name='age'
+            class='form-control' id='age'>
+        </div>
+        <div class='form-gorup'>
+            <label for='date'>date: </label>
+            <input type='date' [(ngModel)]='customer.date' placeholder='enter date' name='date'
+            class='form-control' id='date'>
+        </div>
+        <div class='form-gorup'>
+            <label for='sex'>sex: </label>
+            <input type='sex' [(ngModel)]='customer.sex' placeholder='enter sex' name='sex'
+            class='form-control' id='sex'>
+        </div>
+        <div class='form-gorup'>
+            <label for='qualification'>qualification: </label>
+            <input type='qualification' [(ngModel)]='customer.qualification' placeholder='enter qualification' name='qualification'
+            class='form-control' id='qualification'>
+        </div>
+        <div class='form-gorup'>
+            <label for='address'>address: </label>
+            <input type='address' [(ngModel)]='customer.address' placeholder='enter address' name='address'
+            class='form-control' id='address'>
+        </div>
+        <div class='form-gorup'>
+            <label for='occupation'>occupation: </label>
+            <input type='occupation' [(ngModel)]='customer.occupation' placeholder='enter occupation' name='occupation'
+            class='form-control' id='occupation'>
+        </div>
+        <div class='form-gorup'>
+            <label for='passw'>password: </label>
+            <input type='passw' [(ngModel)]='customer.passw' placeholder='enter passw' name='passw'
+            class='form-control' id='passw'>
+        </div>
+        <div class='form-gorup'>
+            <label for='email'>email: </label>
+            <input type='email' [(ngModel)]='customer.email' placeholder='enter email' name='email'
+            class='form-control' id='email'>
+        </div>
+        <div class='form-gorup'>
+            <label for='premiumAmount'>premiumAmount: </label>
+            <input type='premiumAmount' [(ngModel)]='customer.premiumAmount' placeholder='enter premiumAmount' name='premiumAmount'
+            class='form-control' id='premiumAmount'>
+        </div>
+        <button class='btn btn-success' (click)='createCustomer()'>Create Customer</button>
+
+        
+    </form>
+</div>

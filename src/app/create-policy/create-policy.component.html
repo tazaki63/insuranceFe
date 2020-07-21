@@ -1,0 +1,43 @@
+<div>
+    <h1>Create Policy</h1>
+    <form>
+        <div class='form-gorup'>
+            <label for='policyName'>policyName: </label>
+            <input type='policyName' [(ngModel)]='policy.policyName' placeholder='enter policyName' name='policyName'
+            class='form-control' id='policyName'>
+        </div>
+        <div class='form-gorup'>
+            <label for='policyTerm'>policy term: </label>
+            <input type='policyTerm' [(ngModel)]='policy.policyTerm' placeholder='enter policyTerm' name='policyTerm'
+            class='form-control' id='policyTerm'>
+        </div>
+        <div class='form-gorup'>
+            <label for='policyAmount'>policyAmount: </label>
+            <input type='policyAmount' [(ngModel)]='policy.policyAmount' placeholder='enter policyAmount' name='policyAmount'
+            class='form-control' id='policyAmount'>
+        </div>
+        <div class='form-gorup'>
+            <label for='policyInterest'>policyInterest: </label>
+            <input type='policyInterest' [(ngModel)]='policy.policyInterest' placeholder='enter policyInterest' name='policyInterest'
+            class='form-control' id='policyInterest'>
+        </div>
+        <div class='form-gorup'>
+            <label for='date'>date: </label>
+            <input type='date' [(ngModel)]='policy.date' placeholder='enter date' name='date'
+            class='form-control' id='date'>
+        </div>
+        <div class='form-gorup'>
+            <label for='policyType'>policyType: </label>
+            <input type='policyType' [(ngModel)]='policy.policyType' placeholder='enter policyType' name='policyType'
+            class='form-control' id='policyType'>
+        </div>
+        <div class='form-gorup'>
+            <label for='maturityAmount'>maturityAmount: </label>
+            <input type='maturityAmount' [(ngModel)]='policy.maturityAmount' placeholder='enter maturityAmount' name='maturityAmount'
+            class='form-control' id='maturityAmount'>
+        </div>
+        <div><button class='btn btn-success' (click)='createPolicy()'>Create Policy</button></div>
+
+    </form>
+
+</div>

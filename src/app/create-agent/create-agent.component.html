@@ -1,0 +1,56 @@
+<div>
+    <h1>Create Agent: </h1>
+    <form>
+    <div class="form-group">
+        <label for='agentName'>Agent Name:</label>
+        <input type='agentName' [(ngModel)]='agent.agentName' placeholder='Enter Agent Name' name='agentName'
+        class='form-control' id='agentName'>
+    </div>
+    <div class="form-group">
+        <label for='fatherName'>Agent's Father's Name:</label>
+        <input type='fatherName' [(ngModel)]='agent.fatherName' placeholder='Enter Agent Father Name' name='fatherName'
+        class='form-control' id='fatherName'>
+    </div>
+    <div class="form-group">
+        <label for='age'>Age:</label>
+        <input type='age' [(ngModel)]='agent.age' placeholder='Enter Agent Age' name='age'
+        class='form-control' id='age'>
+    </div>
+    <div class="form-group">
+        <label for='sex'>Sex (M or F):</label>
+        <input type='sex' [(ngModel)]='agent.sex' placeholder='Enter Agent Sex' name='sex'
+        class='form-control' id='sex'>
+    </div>
+
+    <div class="form-group">
+        <label for='qualification'>Agent's Qualification:</label>
+        <input type='qualification' [(ngModel)]='agent.qualification' placeholder='Enter Agent Qualification' name='qualification'
+        class='form-control' id='qualification'>
+    </div>
+
+   
+    <div class="form-group">
+        <label for='branchCity'>Branch City:</label>
+        <input type='branchCity' [(ngModel)]='agent.branchCity' placeholder='Enter Branch City' name='branchCity'
+        class='form-control' id='branchCity'>
+    </div>
+    <div class="form-group">
+        <label for='branchState'>Branch State:</label>
+        <input type='branchState' [(ngModel)]='agent.branchState' placeholder='Enter Branch State' name='branchState'
+        class='form-control' id='branchState'>
+    </div>
+    <div class="form-group">
+        <label for='branchAddress'>Branch Address:</label>
+        <input type='branchAddress' [(ngModel)]='agent.branchAddress' placeholder='Enter Branch Address' name='branchAddress'
+        class='form-control' id='branchAddress'>
+    </div>
+    <div class="form-group">
+        <label for='password'>Password:</label>
+        <input type='password' [(ngModel)]='agent.password' placeholder='Enter password' name='password'
+        class='form-control' id='password'>
+    </div>
+    <div><button class='btn btn-success' (click)='createAgent()'>Create Agent</button></div>
+</form>
+
+
+</div>

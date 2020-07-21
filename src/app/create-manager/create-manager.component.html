@@ -1,0 +1,67 @@
+<div>
+
+    <h1>Create Branch Manager: </h1>
+
+    <form>
+        <div class='form-group'>
+            <label for='managerName'>Manager Name:</label>
+            <input type='managerName' [(ngModel)]='branchManager.managerName' placeholder='enter managerName' name='managerName'
+            class='form-control' id='managerName'>
+        </div>
+
+        <div class='form-group'>
+            <label for='fatherName'>Manager fatherName:</label>
+            <input type='fatherName' [(ngModel)]='branchManager.fatherName' placeholder='enter manager fatherName' name='fatherName'
+            class='form-control' id='fatherName'>
+        </div>
+        <div class='form-group'>
+            <label for='age'>Manager age:</label>
+            <input type='age' [(ngModel)]='branchManager.age' placeholder='enter manager age' name='age'
+            class='form-control' id='age'>
+        </div>
+
+        <div class='form-group'>
+            <label for='sex'>Sex:</label>
+            <input type='sex' [(ngModel)]='branchManager.sex' placeholder='enter manager age' name='age'
+            class='form-control' id='age'>
+        </div>
+        
+        <div class='form-group'>
+            <label for='date'>date:</label>
+            <input type='date' [(ngModel)]='branchManager.date' placeholder='enter manager age' name='date'
+            class='form-control' id='date'>
+        </div>
+        <div class='form-group'>
+            <label for='qualification'>qualification:</label>
+            <input type='qualification' [(ngModel)]='branchManager.qualification' placeholder='enter manager qualification' name='qualification'
+            class='form-control' id='qualification'>
+        </div>
+        <div class='form-group'>
+            <label for='address'>address:</label>
+            <input type='address' [(ngModel)]='branchManager.address' placeholder='enter manager address' name='address'
+            class='form-control' id='address'>
+        </div>
+        <div class='form-group'>
+            <label for='branchState'>branchState:</label>
+            <input type='branchState' [(ngModel)]='branchManager.branchState' placeholder='enter manager branchState' name='branchState'
+            class='form-control' id='branchState'>
+        </div>
+        <div class='form-group'>
+            <label for='branchCities'>branchCities:</label>
+            <input type='branchCities' [(ngModel)]='branchManager.branchCities' placeholder='enter manager branchCities' name='branchCities'
+            class='form-control' id='branchCities'>
+        </div>
+        <div class='form-group'>
+            <label for='branchAddress'>branchAddress:</label>
+            <input type='branchAddress' [(ngModel)]='branchManager.branchAddress' placeholder='enter manager branchAddress' name='branchAddress'
+            class='form-control' id='branchAddress'>
+        </div>
+        <div class='form-group'>
+            <label for='password'>password:</label>
+            <input type='password' [(ngModel)]='branchManager.password' placeholder='enter password' name='password'
+            class='form-control' id='password'>
+        </div>
+        <div><button class='btn btn-success' (click)='createBranchManager()'>Create Manager</button></div>
+    </form>
+
+</div>

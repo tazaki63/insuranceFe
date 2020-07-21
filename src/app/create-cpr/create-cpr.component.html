@@ -1,0 +1,36 @@
+<div>
+    <h1>Create Customer Policy Registration: </h1>
+    <div class='form-gorup'>
+        <label for='premiumType'>Premium Type: </label>
+        <input type='premiumType' [(ngModel)]='cpr.premiumType' placeholder='enter premiumType' name='premiumType'
+        class='form-control' id='premiumType'>
+    </div>
+    <div class='form-gorup'>
+        <label for='date'>date: </label>
+        <input type='date' [(ngModel)]='cpr.date' placeholder='enter date' name='date'
+        class='form-control' id='date'>
+    </div>
+    <div class='form-gorup'>
+        <label for='nomineeName'>nomineeName: </label>
+        <input type='nomineeName' [(ngModel)]='cpr.nomineeName' placeholder='enter nomineeName' name='nomineeName'
+        class='form-control' id='nomineeName'>
+    </div>
+    <div class='form-gorup'>
+        <label for='relationship'>relationship: </label>
+        <input type='relationship' [(ngModel)]='cpr.relationship' placeholder='enter relationship' name='relationship'
+        class='form-control' id='relationship'>
+    </div>
+    <div class='form-gorup'>
+        <label for='agentCommPremiumAmt'>agentCommPremiumAmt: </label>
+        <input type='agentCommPremiumAmt' [(ngModel)]='cpr.agentCommPremiumAmt' placeholder='enter commission amt' name='agentCommPremiumAmt'
+        class='form-control' id='agentCommPremiumAmt'>
+    </div>
+    <div class='form-gorup'>
+        <label for='termsconditions'>termsconditions: </label>
+        <input type='termsconditions' [(ngModel)]='cpr.termsconditions' placeholder='enter termsconditions' name='termsconditions'
+        class='form-control' id='termsconditions'>
+    </div>
+    <button class='btn btn-success' (click)='createCPR()'>Create CPR</button>
+
+
+</div>

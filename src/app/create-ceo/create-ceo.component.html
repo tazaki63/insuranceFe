@@ -1,0 +1,38 @@
+<div>
+    <h1>Create CEO: </h1>
+
+    <form>
+        <div class='form-group'>
+            <label for='name'>CEO name:</label>
+            <input type='name' [(ngModel)]='ceo.name' placeholder='enter student' name='name'
+            class='form-control' id='name'>
+        </div>
+        <div class='form-group'>
+            <label for='age'>CEO age:</label>
+            <input type='age' [(ngModel)]='ceo.age' placeholder='enter age' name='age'
+            class='form-control' id='age'>
+        </div>
+        <div class='form-group'>
+            <label for='sex'>sex:</label>
+            <input type='sex' [(ngModel)]='ceo.sex' placeholder='enter sex' name='sex'
+            class='form-control' id='sex'>
+        </div>
+        <div class='form-group'>
+            <label for='qualification'>sex:</label>
+            <input type='qualification' [(ngModel)]='ceo.qualification' placeholder='enter qualification' name='qualification'
+            class='form-control' id='sex'>
+        </div>
+        <div class='form-group'>
+            <label for='address'>address:</label>
+            <input type='address' [(ngModel)]='ceo.address' placeholder='enter address' name='address'
+            class='form-control' id='address'>
+        </div>
+        <div class='form-group'>
+            <label for='password'>password:</label>
+            <input type='password' [(ngModel)]='ceo.password' placeholder='enter password' name='password'
+            class='form-control' id='password'>
+        </div>
+        <button class='btn btn-success' (click)='createCEO()'>Create CEO</button>
+
+    </form>
+</div>

@@ -1,0 +1,44 @@
+<div>
+    <h1>Create Branch: </h1>
+    <form>
+        <div class='form-gorup'>
+            <label for='branchName'>Branch Name: </label>
+            <input type='branchName' [(ngModel)]='branch.branchName' placeholder='enter branchId' name='branchName'
+            class='form-control' id='branchId'>
+        </div>
+        <div class='form-gorup'>
+            <label for='address'>Branch Address: </label>
+            <input type='address' [(ngModel)]='branch.address' placeholder='enter branch address' name='address'
+            class='form-control' id='address'>
+        </div>
+        <div class='form-gorup'>
+            <label for='phone'>Branch phone: </label>
+            <input type='phone' [(ngModel)]='branch.phone' placeholder='enter branch phone' name='phone'
+            class='form-control' id='phone'>
+        </div>
+        <div class='form-gorup'>
+            <label for='location'>Branch Location: </label>
+            <input type='location' [(ngModel)]='branch.location' placeholder='enter branch location' name='location'
+            class='form-control' id='location'>
+        </div>
+        <div class='form-gorup'>
+            <label for='date'>Date: </label>
+            <input type='date' [(ngModel)]='branch.date' placeholder='enter branch date' name='date'
+            class='form-control' id='date'>
+        </div>
+        <div class='form-gorup'>
+            <label for='city'>City: </label>
+            <input type='city' [(ngModel)]='branch.city' placeholder='enter branch city' name='city'
+            class='form-control' id='city'>
+        </div>
+        <div class='form-gorup'>
+            <label for='state'>State: </label>
+            <input type='state' [(ngModel)]='branch.state' placeholder='enter branch state' name='state'
+            class='form-control' id='state'>
+        </div>
+        <button class='btn btn-success' (click)='createBranch()'>Create student</button>
+
+    </form>
+
+
+</div>

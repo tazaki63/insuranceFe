@@ -1,0 +1,39 @@
+<table border='2'>
+
+    <thead>
+        <tr>
+            <th>Agent ID</th>
+            <th>Agent Name</th>
+            <th>Agent Father's Name</th>
+            <th>Agent Age</th>
+            <th>Sex</th>
+            <th>Qualification</th>
+            <th>Branch City</th>
+            <th>Branch State</th>
+            <th>Branch Address</th>
+            <th>Branch Manager</th>
+        </tr>
+    </thead>
+        <tbody>
+            <tr *ngFor='let agent of agents'>
+                <td>{{agent.agentId}}</td>
+                <td>{{agent.agentName}}</td>
+                <td>{{agent.fatherName}}</td>
+                <td>{{agent.age}}</td>
+                <td>{{agent.sex}}</td>
+                <td>{{agent.qualification}}</td>
+                <td>{{agent.branchCity}}</td>
+                <td>{{agent.branchState}}</td>
+                <td>{{agent.branchAddress}}</td>
+                <td>{{agent.branchManager}}</td>
+                <td><button class='btn btn-danger' (click)='deleteAgent(agent)'>Delete Agent</button></td>
+                <td><button class='btn btn-primary' (click)='editAgent(agent)'>Edit Agent</button></td>
+
+            </tr>
+        </tbody>
+
+    
+
+
+</table>
+
