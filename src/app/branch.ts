@@ -1,4 +1,4 @@
-import { BranchManager } from "./branchManager";
+import { BranchManager } from "./branchmanager";
 
 export class Branch{
 

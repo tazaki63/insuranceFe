@@ -2,9 +2,12 @@
     <h1>Create Customer: </h1>
     <form>
         <div class='form-gorup'>
-            <label for='customerName'>customerName: </label>
-            <input type='customerName' [(ngModel)]='customer.customerName' placeholder='enter customerName' name='customerName'
-            class='form-control' id='customerName'>
+            <label  for='customerName'>customerName: </label>
+            <input required type='customerName' [(ngModel)]='customer.customerName' placeholder='enter customerName' name='customerName'
+            class='form-control' id='customerName' #name="ngModel">
+            <div *ngIf="name.invalid && (name.dirty || name.touched)" >
+                <small *ngIf="name.errors.required" class="alert alert-danger">Name is required</small>
+            </div>
         </div>
         <div class='form-gorup'>
             <label for='fatherName'>fatherName: </label>
@@ -41,10 +44,14 @@
             <input type='occupation' [(ngModel)]='customer.occupation' placeholder='enter occupation' name='occupation'
             class='form-control' id='occupation'>
         </div>
-        <div class='form-gorup'>
-            <label for='passw'>password: </label>
-            <input type='passw' [(ngModel)]='customer.passw' placeholder='enter passw' name='passw'
-            class='form-control' id='passw'>
+        <div class="form-group">
+            <label for='passw'>Password:</label>
+            <input type='passw' required minlength="6" [(ngModel)]='customer.passw' placeholder='Enter password' name='passw'
+            class='form-control' id='passw' #passw="ngModel">
+            <div *ngIf="passw.invalid && (passw.dirty || passw.touched)" >
+                <small *ngIf="passw.errors.required" class="alert alert-danger">Password is required</small>
+                <small *ngIf="passw.errors.minlength"  class="alert alert-danger">Password must be at least 6 characters long.</small>
+            </div>
         </div>
         <div class='form-gorup'>
             <label for='email'>email: </label>
@@ -56,8 +63,40 @@
             <input type='premiumAmount' [(ngModel)]='customer.premiumAmount' placeholder='enter premiumAmount' name='premiumAmount'
             class='form-control' id='premiumAmount'>
         </div>
-        <button class='btn btn-success' (click)='createCustomer()'>Create Customer</button>
 
+        <div class="form-group">
+            <label for='agent'>Agent:</label>
+            <select type="agent" [(ngModel)]='customer.agent' name="agent" id="agent">
+            <option value="0">--Agents--</option>
+            <option *ngFor="let agent of agents" [ngValue]="agent">
+                {{agent.agentName}}
+            </option>
+        </select>
+        </div>
+
+        <div class="form-group">
+            <label for='policy'>Policy:</label>
+            <select type="policy" [(ngModel)]='customer.policy' name="policy" id="policy">
+            <option value="0">--Policies--</option>
+            <option *ngFor="let policy of policies" [ngValue]="policy">
+                {{policy.policyType}}
+            </option>
+        </select>
+        </div>
+        <div class="form-group">
+            <label for='branch'>Branch:</label>
+            <select type="branch" [(ngModel)]='customer.branch' name="branch" id="branch">
+            <option value="0">--Branches--</option>
+            <option *ngFor="let branch of branches" [ngValue]="branch">
+                {{branch.branchName}}
+            </option>
+        </select>
+        </div>
+        <div>
+        <button class='btn btn-success' (click)='createCustomer()'>Create Customer</button>
+        <button class="btn btn-danger" >
+            <a href="customer-control">Cancel</a></button>
+    </div>
         
     </form>
 </div>

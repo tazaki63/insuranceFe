@@ -1,4 +1,6 @@
 import { BranchManager } from 'src/app/branchmanager';
+import { CPR } from './cpr';
+import { Customer } from './customer';
 
 export class Agent{
     constructor(
@@ -12,6 +14,8 @@ export class Agent{
         public branchState:string,
         public branchAddress:string,
         public password:string,
-        public branchManager:BranchManager
+        public branchManager:BranchManager,
+        public cpr:CPR,
+        public customers:Customer[]
     ){}
 }

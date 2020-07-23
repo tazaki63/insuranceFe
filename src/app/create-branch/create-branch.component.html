@@ -3,8 +3,11 @@
     <form>
         <div class='form-gorup'>
             <label for='branchName'>Branch Name: </label>
-            <input type='branchName' [(ngModel)]='branch.branchName' placeholder='enter branchId' name='branchName'
-            class='form-control' id='branchId'>
+            <input type='branchName' required [(ngModel)]='branch.branchName' placeholder='Enter Branch Name' name='branchName'
+            class='form-control' id='branchId' #branchName="ngModel">
+            <div *ngIf="branchName.invalid && (branchName.dirty || branchName.touched)" >
+                <small *ngIf="branchName.errors.required" class="alert alert-danger">Name is required</small>
+            </div>
         </div>
         <div class='form-gorup'>
             <label for='address'>Branch Address: </label>
@@ -36,8 +39,21 @@
             <input type='state' [(ngModel)]='branch.state' placeholder='enter branch state' name='state'
             class='form-control' id='state'>
         </div>
+        <div class="form-group">
+            <label for='branchManager'>Branch Manager:</label>
+            <select type="branchManager" [(ngModel)]='branch.branchManager' name="branchManager" id="branchManager">
+            <option value="0">--Managers--</option>
+            <option *ngFor="let manager of managers" [ngValue]="manager">
+                {{manager.managerName}}
+            </option>
+        </select>
+        </div>
+        <div>
         <button class='btn btn-success' (click)='createBranch()'>Create student</button>
+        <button type="button" mdbBtn color="primary" mdbWavesEffect>
+            <a href="branch-control">Cancel</a></button>
 
+    </div>
     </form>
 
 

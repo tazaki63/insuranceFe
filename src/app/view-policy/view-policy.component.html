@@ -1,0 +1,31 @@
+<button type="button" mdbBtn color="primary" mdbWavesEffect>
+    <a href="policy-control"><Policy</a></button>
+<table class="table table-bordered table-responsive-md table-striped text-center">
+
+    <thead>
+        <tr>
+            <th>Policy ID</th>
+            <th>Policy Term</th>
+            <th>Policy Amount</th>
+            <th>Policy Interest</th>
+            <th>Date</th>
+            <th>Policy Type</th>
+            <th>Maturity Amount</th>
+        </tr>
+    </thead>
+        <tbody>
+            <tr *ngFor='let policy of policies; let policyId=index'>
+                <td><span>{{policy.policyId}}</span></td>
+                <td><span (keyup)="changeValue(policyId, 'policyTerm', $event)" (blur)="updateList(policyId, 'policyTerm', $event, policy)" contenteditable="true">{{policy.policyTerm}}</span></td>
+                <td><span (keyup)="changeValue(policyId, 'policyAmount', $event)" (blur)="updateList(policyId, 'policyAmount', $event, policy)" contenteditable="true">{{policy.policyAmount}}</span></td>
+                <td><span (keyup)="changeValue(policyId, 'policyInterest', $event)" (blur)="updateList(policyId, 'policyInterest', $event, policy)" contenteditable="true">{{policy.policyInterest}}</span></td>
+                <td><span (keyup)="changeValue(policyId, 'date', $event)" (blur)="updateList(policyId, 'date', $event, policy)" contenteditable="true">{{policy.date}}</span></td>
+                <td><span (keyup)="changeValue(policyId, 'policyType', $event)" (blur)="updateList(policyId, 'policyType', $event, policy)" contenteditable="true">{{policy.policyType}}</span></td>
+                <td><span (keyup)="changeValue(policyId, 'maturityAmount', $event)" (blur)="updateList(policyId, 'maturityAmount', $event, policy)" contenteditable="true">{{policy.maturityAmount}}</span></td>
+                <td><button class='btn btn-danger' (click)='deletePolicy(policy)'>Delete Policy</button></td>
+                <td><button class='btn btn-primary' (click)='editAgent(agent)'>Edit Policy</button></td>
+
+            </tr>
+        </tbody>
+
+</table>

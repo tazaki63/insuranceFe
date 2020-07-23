@@ -4,8 +4,11 @@
     <form>
         <div class='form-group'>
             <label for='name'>CEO name:</label>
-            <input type='name' [(ngModel)]='ceo.name' placeholder='enter student' name='name'
-            class='form-control' id='name'>
+            <input type='name' required [(ngModel)]='ceo.name' placeholder='enter student' name='name'
+            class='form-control' id='name' #name="ngModel">
+            <div *ngIf="name.invalid && (name.dirty || name.touched)" >
+                <small *ngIf="name.errors.required" class="alert alert-danger">Name is required</small>
+            </div>
         </div>
         <div class='form-group'>
             <label for='age'>CEO age:</label>
@@ -27,10 +30,14 @@
             <input type='address' [(ngModel)]='ceo.address' placeholder='enter address' name='address'
             class='form-control' id='address'>
         </div>
-        <div class='form-group'>
-            <label for='password'>password:</label>
-            <input type='password' [(ngModel)]='ceo.password' placeholder='enter password' name='password'
-            class='form-control' id='password'>
+        <div class="form-group">
+            <label for='password'>Password:</label>
+            <input type='password' required minlength="6" [(ngModel)]='ceo.password' placeholder='Enter password' name='password'
+            class='form-control' id='password' #password="ngModel">
+            <div *ngIf="password.invalid && (password.dirty || password.touched)" >
+                <small *ngIf="password.errors.required" class="alert alert-danger">Password is required</small>
+                <small *ngIf="password.errors.minlength"  class="alert alert-danger">Password must be at least 6 characters long.</small>
+            </div>
         </div>
         <button class='btn btn-success' (click)='createCEO()'>Create CEO</button>
 

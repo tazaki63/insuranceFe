@@ -9,22 +9,22 @@ export class CprService {
   constructor(private http:HttpClient) { }
 
   public getAll(){
-    return this.http.get<CPR[]>('http://localhost:8080/cprs/allCprs');
+    return this.http.get<CPR[]>('http://localhost:8080/api/cprs/allCprs');
   }
 
   public create(cpr){
-    return this.http.post<CPR>('http://localhost:8080/cprs/createCpr', cpr);
+    return this.http.post<CPR>('http://localhost:8080/api/cprs/createCpr', cpr);
   }
 
   public delete(cpr){
-    return this.http.delete<CPR>('http://localhost:8080/cprs/'+cpr.cprId);
+    return this.http.delete<CPR>('http://localhost:8080/api/cprs/'+cpr.cprId);
   }
 
   public get(cpr){
-    return this.http.get<CPR>('http://localhost:8080/cprs/'+cpr.cpr.Id);
+    return this.http.get<CPR>('http://localhost:8080/api/cprs/'+cpr.customerPolicyId);
   }
 
   public update(cpr){
-    return this.http.put<CPR>('http://localhost:8080/cprs/update/'+cpr.cprId, cpr);
+    return this.http.put<CPR>('http://localhost:8080/api/cprs/update/'+cpr.customerPolicyId, cpr);
   }
 }

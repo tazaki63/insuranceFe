@@ -10,23 +10,27 @@ export class AgentService {
   constructor(private http:HttpClient) { }
 
   public getAllAgents(){
-    return this.http.get<Agent[]>('http://localhost:8080/agents/allAgents');
+    return this.http.get<Agent[]>('http://localhost:8080/api/agents/allAgents');
   }
 
   public createAgent(agent){
-    return this.http.post<Agent>('http://localhost:8080/agents/createAgent', agent);
+    return this.http.post<Agent>('http://localhost:8080/api/agents/createAgent', agent);
   }
 
   public deleteAgent(agent){
-    return this.http.delete<Agent>('http://localhost:8080/agents/'+agent.agentId);
+    return this.http.delete<Agent>('http://localhost:8080/api/agents/'+agent.agentId);
   }
 
   public getAgent(agent){
-    return this.http.get<Agent>('http://localhost:8080/agents/'+agent.agentId);
+    return this.http.get<Agent>('http://localhost:8080/api/agents/'+agent.agentId);
+  }
+
+  public getById(agentId:number){
+    return this.http.get<Agent>('http://localhost:8080/api/agents/'+agentId);
   }
 
   public updateAgent(agent){
-    return this.http.put<Agent>('http://localhost:8080/agents/update/'+agent.agentId, agent);
+    return this.http.put<Agent>('http://localhost:8080/api/agents/update/'+agent.agentId, agent);
   }
 
 }

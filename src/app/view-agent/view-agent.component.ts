@@ -9,6 +9,7 @@ import { AgentService } from '../service/agent.service';
 })
 export class ViewAgentComponent implements OnInit {
 
+  editField:string;
   agents:Agent[];
   constructor(private service:AgentService) { }
 
@@ -26,4 +27,17 @@ export class ViewAgentComponent implements OnInit {
     })
   }
 
+  updateList(id: number, property: string, event: any, agent:Agent) {
+    const editField = event.target.textContent;
+    this.agents[id][property] = editField;
+    this.update(agent);
+  }
+
+  update(agent:Agent){
+    this.service.updateAgent(agent).subscribe(response=>this.agentSuccessResponse(response));
+  }
+
+  changeValue(id: number, property: string, event: any) {
+    this.editField = event.target.textContent;
+  }
 }

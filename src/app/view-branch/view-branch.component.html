@@ -1,0 +1,36 @@
+<button type="button" mdbBtn color="primary" mdbWavesEffect>
+    <a href="agent-control"><Branch</a></button>
+<table  class="table table-bordered table-responsive-md table-striped text-center">
+
+    <thead>
+        <tr>
+            <th>Branch ID</th>
+            <th>Branch Name</th>
+            <th>Branch Address</th>
+            <th>Phone</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Branch City</th>
+            <th>Branch State</th>
+            <th>Branch Manager</th>
+        </tr>
+    </thead>
+        <tbody>
+            <tr *ngFor='let branch of branches; let branchId=index'>
+                <td>{{branch.branchId}}</td>
+                <td><span (keyup)="changeValue(branchId, 'branchName', $event)" (blur)="updateList(branchId, 'branchName', $event, branch)" contenteditable="true">{{branch.branchName}}</span></td>
+                <td><span (keyup)="changeValue(branchId, 'address', $event)" (blur)="updateList(branchId, 'address', $event, branch)" contenteditable="true">{{branch.address}}</span></td>
+                <td><span (keyup)="changeValue(branchId, 'phone', $event)" (blur)="updateList(branchId, 'phone', $event, branch)" contenteditable="true">{{branch.phone}}</span></td>
+                <td><span (keyup)="changeValue(branchId, 'location', $event)" (blur)="updateList(branchId, 'location', $event, branch)" contenteditable="true">{{branch.location}}</span></td>
+                <td><span (keyup)="changeValue(branchId, 'date', $event)" (blur)="updateList(branchId, 'date', $event, branch)" contenteditable="true">{{branch.date}}</span></td>
+                <td><span (keyup)="changeValue(branchId, 'city', $event)" (blur)="updateList(branchId, 'city', $event, branch)" contenteditable="true">{{branch.city}}</span></td>
+                <td><span (keyup)="changeValue(branchId, 'state', $event)" (blur)="updateList(branchId, 'state', $event, branch)" contenteditable="true">{{branch.state}}</span></td>
+                <td>{{branch.branchManager}}</td>
+                
+                <td><button class='btn btn-danger' (click)='deleteBranch(branch)'>Delete</button></td>
+
+            </tr>
+        </tbody>
+
+</table>
+

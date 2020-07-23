@@ -1,0 +1,41 @@
+<button type="button" mdbBtn color="primary" mdbWavesEffect>
+    <a href="manager-control"><Manager</a></button>
+<table border='2'>
+
+    <thead>
+        <tr>
+            <th>Manager ID</th>
+            <th>Manager Name</th>
+            <th>Manager Father's Name</th>
+            <th>Age</th>
+            <th>Sex</th>
+            <th>Date</th>
+            <th>Qualification</th>
+            <th>Address</th>
+            <th>Branch State</th>
+            <th>Branch City</th>
+            <th>Branch Address</th>
+            
+        </tr>
+    </thead>
+        <tbody>
+            <tr *ngFor='let manager of managers; let managerId=index'>
+                <td><span>{{manager.managerId}}</span></td>
+                <td><span (keyup)="changeValue(managerId, 'managerName', $event)" (blur)="updateList(managerId, 'managerName', $event, manager)" contenteditable="true">{{manager.managerName}}</span></td>
+                <td><span (keyup)="changeValue(managerId, 'fatherName', $event)" (blur)="updateList(managerId, 'fatherName', $event, manager)" contenteditable="true">{{manager.fatherName}}</span></td>
+                <td><span (keyup)="changeValue(managerId, 'age', $event)" (blur)="updateList(managerId, 'age', $event, manager)" contenteditable="true">{{manager.age}}</span></td>
+                <td><span (keyup)="changeValue(managerId, 'sex', $event)" (blur)="updateList(managerId, 'sex', $event, manager)" contenteditable="true">{{manager.sex}}</span></td>
+                <td><span (keyup)="changeValue(managerId, 'date', $event)" (blur)="updateList(managerId, 'date', $event, manager)" contenteditable="true">{{manager.date}}</span></td>
+                <td><span (keyup)="changeValue(managerId, 'qualification', $event)" (blur)="updateList(managerId, 'qualification', $event, manager)" contenteditable="true">{{manager.qualification}}</span></td>
+                <td><span (keyup)="changeValue(managerId, 'address', $event)" (blur)="updateList(managerId, 'address', $event, manager)" contenteditable="true">{{manager.address}}</span></td>
+                <td><span (keyup)="changeValue(managerId, 'branchState', $event)" (blur)="updateList(managerId, 'branchState', $event, manager)" contenteditable="true">{{manager.branchState}}</span></td>
+                <td><span (keyup)="changeValue(managerId, 'branchCities', $event)" (blur)="updateList(managerId, 'branchCities', $event, manager)" contenteditable="true">{{manager.branchCities}}</span></td>
+                <td><span (keyup)="changeValue(managerId, 'branchAddress', $event)" (blur)="updateList(managerId, 'branchAddress', $event, manager)" contenteditable="true">{{manager.branchAddress}}</span></td>
+                <td><button class='btn btn-danger' (click)='deleteManager(manager)'>Delete Manager</button></td>
+                <td><button class='btn btn-primary' (click)='editAgent(agent)'>Edit Agent</button></td>
+
+            </tr>
+        </tbody>
+
+</table>
+

@@ -1,0 +1,50 @@
+<button type="button" mdbBtn color="primary" mdbWavesEffect>
+    <a href="customer-control"><Customer</a></button>
+
+<table  class="table table-bordered table-responsive-md table-striped text-center">
+
+    <thead>
+        <tr>
+            <th>Customer ID</th>
+            <th>Customer Name</th>
+            <th>Father's Name</th>
+            <th>Age</th>
+            <th>Date</th>
+            <th>Sex</th>
+            <th>Qualification</th>
+            <th>Address</th>
+            <th>Occupation</th>
+            <th>Email</th>
+            <th>Premium Amount</th>
+            <th>Agent</th>
+            <th>Policy</th>
+            <th>Branch</th>
+        </tr>
+    </thead>
+        <tbody>
+            <tr *ngFor='let customer of customers; let customerId=index'>
+                <td><span>{{customer.customerId}}</span></td>
+                <td><span (keyup)="changeValue(customerId, 'customerName', $event)" (blur)="updateList(customerId, 'customerName', $event, customer)" contenteditable="true">{{customer.customerName}}</span></td>
+                <td><span (keyup)="changeValue(customerId, 'fatherName', $event)" (blur)="updateList(customerId, 'fatherName', $event, customer)" contenteditable="true">{{customer.fatherName}}</span></td>
+                <td><span (keyup)="changeValue(customerId, 'age', $event)" (blur)="updateList(customerId, 'age', $event, customer)" contenteditable="true">{{customer.age}}</span></td>
+                <td><span (keyup)="changeValue(customerId, 'date', $event)" (blur)="updateList(customerId, 'date', $event, customer)" contenteditable="true">{{customer.date}}</span></td>
+                <td><span (keyup)="changeValue(customerId, 'sex', $event)" (blur)="updateList(customerId, 'sex', $event, customer)" contenteditable="true">{{customer.sex}}</span></td>
+                <td><span (keyup)="changeValue(customerId, 'qualification', $event)" (blur)="updateList(customerId, 'qualification', $event, customer)" contenteditable="true">{{customer.qualification}}</span></td>
+                <td><span (keyup)="changeValue(customerId, 'address', $event)" (blur)="updateList(customerId, 'address', $event, customer)" contenteditable="true">{{customer.address}}</span></td>
+                <td><span (keyup)="changeValue(customerId, 'occupation', $event)" (blur)="updateList(customerId, 'occupation', $event, customer)" contenteditable="true">{{customer.occupation}}</span></td>
+                <td><span (keyup)="changeValue(customerId, 'email', $event)" (blur)="updateList(customerId, 'email', $event, customer)" contenteditable="true">{{customer.email}}</span></td>
+                <td><span (keyup)="changeValue(customerId, 'premiumAmount', $event)" (blur)="updateList(customerId, 'premiumAmount', $event, customer)" contenteditable="true">{{customer.premiumAmount}}</span></td>
+                <td><span >{{customer.agent}}</span></td>
+                <td><span>{{customer.policy}} </span></td>
+                <td><span>{{customer.branch}}</span></td>
+                <td><button class='btn btn-danger' (click)='deleteCustomer(customer)'>Delete Customer</button></td>
+
+            </tr>
+        </tbody>
+
+        
+    
+
+
+</table>
+

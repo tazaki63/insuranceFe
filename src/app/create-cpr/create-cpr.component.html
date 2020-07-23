@@ -2,8 +2,11 @@
     <h1>Create Customer Policy Registration: </h1>
     <div class='form-gorup'>
         <label for='premiumType'>Premium Type: </label>
-        <input type='premiumType' [(ngModel)]='cpr.premiumType' placeholder='enter premiumType' name='premiumType'
-        class='form-control' id='premiumType'>
+        <input type='premiumType' required [(ngModel)]='cpr.premiumType' placeholder='enter premiumType' name='premiumType'
+        class='form-control' id='premiumType' #premiumType="ngModel">
+        <div *ngIf="premiumType.invalid && (premiumType.dirty || premiumType.touched)" >
+            <small *ngIf="premiumType.errors.required" class="alert alert-danger">Type is required</small>
+        </div>
     </div>
     <div class='form-gorup'>
         <label for='date'>date: </label>
@@ -22,8 +25,11 @@
     </div>
     <div class='form-gorup'>
         <label for='agentCommPremiumAmt'>agentCommPremiumAmt: </label>
-        <input type='agentCommPremiumAmt' [(ngModel)]='cpr.agentCommPremiumAmt' placeholder='enter commission amt' name='agentCommPremiumAmt'
-        class='form-control' id='agentCommPremiumAmt'>
+        <input required type='agentCommPremiumAmt' [(ngModel)]='cpr.agentCommPremiumAmt' placeholder='enter commission amt' name='agentCommPremiumAmt'
+        class='form-control' id='agentCommPremiumAmt' #thisone="ngModel">
+        <div *ngIf="thisone.invalid && (thisone.dirty || thisone.touched)" >
+            <small *ngIf="thisone.errors.required" class="alert alert-danger">Commission is required</small>
+        </div>
     </div>
     <div class='form-gorup'>
         <label for='termsconditions'>termsconditions: </label>
@@ -31,6 +37,8 @@
         class='form-control' id='termsconditions'>
     </div>
     <button class='btn btn-success' (click)='createCPR()'>Create CPR</button>
+    <button class="btn btn-danger" >
+        <a href="cpr-control">Cancel</a></button>
 
 
 </div>

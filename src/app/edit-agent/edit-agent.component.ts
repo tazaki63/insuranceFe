@@ -8,7 +8,7 @@ import { Agent } from '../agent';
 })
 export class EditAgentComponent implements OnInit {
 
-  agent:Agent=new Agent(null,null,null,null,null,null,null,null,null,null,null,);
+  agent:Agent=new Agent(null,null,null,null,null,null,null,null,null,null,null,null,null);
 
   constructor() { }
 
@@ -16,6 +16,6 @@ export class EditAgentComponent implements OnInit {
   }
 
   editAgent(agent:Agent){
-    
+        
   }
 }

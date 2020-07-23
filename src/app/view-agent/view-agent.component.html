@@ -1,4 +1,6 @@
-<table border='2'>
+<button type="button" mdbBtn color="primary" mdbWavesEffect>
+    <a href="agent-control"><Agent</a></button>
+<table class="table table-bordered table-responsive-md table-striped text-center">
 
     <thead>
         <tr>
@@ -11,23 +13,22 @@
             <th>Branch City</th>
             <th>Branch State</th>
             <th>Branch Address</th>
-            <th>Branch Manager</th>
+            
         </tr>
     </thead>
         <tbody>
-            <tr *ngFor='let agent of agents'>
+            <tr *ngFor='let agent of agents; let agentId=index'>
                 <td>{{agent.agentId}}</td>
-                <td>{{agent.agentName}}</td>
-                <td>{{agent.fatherName}}</td>
-                <td>{{agent.age}}</td>
-                <td>{{agent.sex}}</td>
-                <td>{{agent.qualification}}</td>
-                <td>{{agent.branchCity}}</td>
-                <td>{{agent.branchState}}</td>
-                <td>{{agent.branchAddress}}</td>
-                <td>{{agent.branchManager}}</td>
+                <td><span (keyup)="changeValue(agentId, 'agentName', $event)" (blur)="updateList(agentId, 'agentName', $event, agent)" contenteditable="true">{{agent.agentName}}</span></td>
+                <td><span (keyup)="changeValue(agentId, 'fatherName', $event)" (blur)="updateList(agentId, 'fatherName', $event, agent)" contenteditable="true">{{agent.fatherName}}</span></td>
+                <td><span (keyup)="changeValue(agentId, 'age', $event)" (blur)="updateList(agentId, 'age', $event, agent)" contenteditable="true">{{agent.age}}</span></td>
+                <td><span (keyup)="changeValue(agentId, 'sex', $event)" (blur)="updateList(agentId, 'sex', $event, agent)" contenteditable="true">{{agent.sex}}</span></td>
+                <td><span (keyup)="changeValue(agentId, 'qualification', $event)" (blur)="updateList(agentId, 'qualification', $event, agent)" contenteditable="true">{{agent.qualification}}</span></td>
+                <td><span (keyup)="changeValue(agentId, 'branchCity', $event)" (blur)="updateList(agentId, 'branchCity', $event, agent)" contenteditable="true">{{agent.branchCity}}</span></td>
+                <td><span (keyup)="changeValue(agentId, 'branchState', $event)" (blur)="updateList(agentId, 'branchState', $event, agent)" contenteditable="true">{{agent.branchState}}</span></td>
+                <td><span (keyup)="changeValue(agentId, 'branchAddress', $event)" (blur)="updateList(agentId, 'branchAddress', $event, agent)" contenteditable="true">{{agent.branchAddress}}</span></td>
+                
                 <td><button class='btn btn-danger' (click)='deleteAgent(agent)'>Delete Agent</button></td>
-                <td><button class='btn btn-primary' (click)='editAgent(agent)'>Edit Agent</button></td>
 
             </tr>
         </tbody>
