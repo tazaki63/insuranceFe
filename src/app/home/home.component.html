@@ -1,12 +1,37 @@
-<button type="button" mdbBtn color="primary" mdbWavesEffect>
+
+<div class=''>
+
+<div text-align='center' class='div container'>
+<button *ngIf='showManagerBoard'  class='btn btn-warning'>
     <a href="agent-control">Agent</a></button>
-<button type="button" mdbBtn color="primary" mdbWavesEffect>
+<button *ngIf='showManagerBoard' class='btn btn-warning'>
     <a href="customer-control">Customer</a></button>
-<button type="button" mdbBtn color="primary" mdbWavesEffect>
-    <a href="branch-control">Branch</a></button>
-<button type="button" mdbBtn color="primary" mdbWavesEffect>
+<button *ngIf='showCEOBoard'  class='btn btn-warning'>
+    <a  href="branch-control">Branch</a></button>
+<button *ngIf='showCEOBoard'  class='btn btn-warning'>
     <a href="policy-control">Policy</a></button>
-<button type="button" mdbBtn color="primary" mdbWavesEffect>
+<button *ngIf='showCEOBoard' class='btn btn-warning'>
     <a href="manager-control">BranchManager</a></button>
-<button type="button" mdbBtn color="primary" mdbWavesEffect>
+<button *ngIf='showManagerBoard'  class='btn btn-warning'>
     <a href="cpr-control">Customer Policy Registration</a></button>
+    <button *ngIf='showManagerBoard'  class='btn btn-warning'>
+        <a href="payment-page">Payment</a></button>
+        <button *ngIf='showCustomerBoard'  class='btn btn-warning'>
+            <a href="report">Customer Details</a></button>
+           
+
+                <button *ngIf='showCustomerBoard'  class='btn btn-warning'>
+                    <a href="policy-details-cust">Policy Details</a></button>
+                    <button *ngIf='showManagerBoard'  class='btn btn-warning'>
+                        <a href="agent-commission">Agent Commission</a></button>
+    
+                        <button *ngIf='showAgentBoard'  class='btn btn-warning'>
+                            <a href="agent-customers">Customer Details</a></button>
+            <button *ngIf='showAgentBoard'  class='btn btn-warning'>
+            <a href="policies">Policies Details</a></button>
+            <button *ngIf='showCustomerBoard'  class='btn btn-warning'>
+                <a href="customer-pay">Customer Payment</a></button>
+            
+    </div>
+    
+</div>

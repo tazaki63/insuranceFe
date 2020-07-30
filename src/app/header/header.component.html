@@ -1,14 +1,39 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div id="divWeatherMain" >
         <div class="weatherWidgetRow">{{WeatherData.temp_celcius}}°C</div>
-        <div class="weatherWidgetRow">Feels Like: {{WeatherData.temp_celcius-2}}°</div>
+        <div class="weatherWidgetRow">Maryville</div>
 
     </div>
-        <div class="nav-bar nav">
-            <li class="nav-item"><a href="home" class="nav-link" >home</a></li>
 
-            <li><a href="login" class='nav-link'>login</a></li>
-            <li><a href="" class='nav-link'>logout</a></li>
+    <div class='head' ><h2 text-color='white'>InsuranceOnline Co.</h2></div>
+        <div class="nav-bar nav">
+            <li *ngIf='service.isUserLoggedIn()' class="nav-item"><a href="home" class="nav-link" >home</a></li>
+
+            <li><a *ngIf='!service.isUserLoggedIn()' href="login" class='nav-link'>login</a></li>
+           <!--
+            <li  *ngIf='showManagerBoard'> <a href="agent-control" class='nav-link'>Agent</a></li>
+            <li *ngIf='showManagerBoard'><a href="customer-control"  class='nav-link'>Customer</a></li>
+            <li *ngIf='showCEOBoard'><a  href="branch-control"  class='nav-link'>Branch</a></li>
+            <li *ngIf='showCEOBoard'><a href="policy-control"  class='nav-link'>Policy</a></li>
+            <li *ngIf='showCEOBoard'><a href="manager-control"  class='nav-link'>BranchManager</a></li>
+            <li *ngIf='showManagerBoard'><a href="cpr-control"  class='nav-link'>Customer Policy Registration</a></li>
+            <li *ngIf='showManagerBoard'><a href="payment-page"  class='nav-link'>Payment</a></li>
+            <li *ngIf='showCustomerBoard'> <a href="report"  class='nav-link'>Report</a></li>
+            <li *ngIf='showCustomerBoard'><a href="policy-details-cust"  class='nav-link'>Policy Details</a></li>
+            <li *ngIf='showManagerBoard'><a href="agent-commission"  class='nav-link'>Agent Commission</a></li>
+            <li *ngIf='showAgentBoard'> <a href="agent-customers"  class='nav-link'>Customer Details</a></li>
+            <li *ngIf='showAgentBoard'><a href="policies"  class='nav-link'>Policies Details</a></li>
+            <li *ngIf='showCustomerBoard'><a href="customer-pay"  class='nav-link'>Customer Payment</a></li>
+-->
+
+
+
+
+
+            <li><a  href="login" class='nav-link'>about us</a></li>
+           
+            <li><a  href="login" class='nav-link'>Call +1-(800)-INSURED</a></li>
+            <li><a *ngIf='service.isUserLoggedIn()' href="logout" class='nav-link'>logout</a></li>
         </div>
           
     

@@ -1,6 +1,6 @@
 <button type="button" mdbBtn color="primary" mdbWavesEffect>
     <a href="manager-control"><Manager</a></button>
-<table border='2'>
+<table class="table table-dark">
 
     <thead>
         <tr>
@@ -13,7 +13,7 @@
             <th>Qualification</th>
             <th>Address</th>
             <th>Branch State</th>
-            <th>Branch City</th>
+     
             <th>Branch Address</th>
             
         </tr>
@@ -29,10 +29,10 @@
                 <td><span (keyup)="changeValue(managerId, 'qualification', $event)" (blur)="updateList(managerId, 'qualification', $event, manager)" contenteditable="true">{{manager.qualification}}</span></td>
                 <td><span (keyup)="changeValue(managerId, 'address', $event)" (blur)="updateList(managerId, 'address', $event, manager)" contenteditable="true">{{manager.address}}</span></td>
                 <td><span (keyup)="changeValue(managerId, 'branchState', $event)" (blur)="updateList(managerId, 'branchState', $event, manager)" contenteditable="true">{{manager.branchState}}</span></td>
-                <td><span (keyup)="changeValue(managerId, 'branchCities', $event)" (blur)="updateList(managerId, 'branchCities', $event, manager)" contenteditable="true">{{manager.branchCities}}</span></td>
+ 
                 <td><span (keyup)="changeValue(managerId, 'branchAddress', $event)" (blur)="updateList(managerId, 'branchAddress', $event, manager)" contenteditable="true">{{manager.branchAddress}}</span></td>
-                <td><button class='btn btn-danger' (click)='deleteManager(manager)'>Delete Manager</button></td>
-                <td><button class='btn btn-primary' (click)='editAgent(agent)'>Edit Agent</button></td>
+                <td><button class='btn btn-danger' (click)='deleteManager(manager)'>Delete</button></td>
+                <td><button class='btn btn-primary' (click)='editAgent(agent)'>Edit</button></td>
 
             </tr>
         </tbody>

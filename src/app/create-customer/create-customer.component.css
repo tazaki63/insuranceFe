@@ -1,0 +1,16 @@
+form{
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 1000px;
+    height: 100px;
+    padding-bottom: 79px;
+    
+}
+
+.form1{
+    background-color: dimgrey;
+    
+}

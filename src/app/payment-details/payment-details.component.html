@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <header>
+  <script  src="https://js.stripe.com/v2/"></script>
+</header>
+<div  class = "container mt-3 " >
+    <div  class = "card p-3" style = "width:28rem;" *ngIf = "customer" >
+          <div  class = "card-body mx-auto " >
+          <h5  class = "card-title" > {{customer.customerName}} </h5 >
+          <p > <b > Price: </b > {{customer.premiumAmount}}$ </p >
+        </div >
+        <div  class = "card-body" >
+          <app-payment name="{{customer.customerName}}"
+          price="{{customer.premiumAmount}}" description=null> </app-payment >
+        </div >
+      </div >
+      </div >
+      </html>

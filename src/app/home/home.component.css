@@ -1,0 +1,19 @@
+.div{
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 1000px;
+    height: 100px;
+}
+
+button{
+    margin: 10px;
+}
+
+.container{
+  background-color: dimgrey;
+  text-align: center    ;
+  padding-top: 20px;
+}

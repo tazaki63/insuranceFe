@@ -9,6 +9,8 @@ import { PolicyService } from '../service/policy.service';
 })
 export class ViewPolicyComponent implements OnInit {
 
+  
+
   editField:string;
   policies:Policy[];
   constructor(private service:PolicyService) { }

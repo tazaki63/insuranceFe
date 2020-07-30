@@ -1,6 +1,6 @@
 <button type="button" mdbBtn color="primary" mdbWavesEffect>
     <a href="agent-control"><Agent</a></button>
-<table class="table table-bordered table-responsive-md table-striped text-center">
+<table class = "table table-dark">
 
     <thead>
         <tr>
@@ -13,6 +13,7 @@
             <th>Branch City</th>
             <th>Branch State</th>
             <th>Branch Address</th>
+            <th>Branch Manager</th>
             
         </tr>
     </thead>
@@ -27,9 +28,9 @@
                 <td><span (keyup)="changeValue(agentId, 'branchCity', $event)" (blur)="updateList(agentId, 'branchCity', $event, agent)" contenteditable="true">{{agent.branchCity}}</span></td>
                 <td><span (keyup)="changeValue(agentId, 'branchState', $event)" (blur)="updateList(agentId, 'branchState', $event, agent)" contenteditable="true">{{agent.branchState}}</span></td>
                 <td><span (keyup)="changeValue(agentId, 'branchAddress', $event)" (blur)="updateList(agentId, 'branchAddress', $event, agent)" contenteditable="true">{{agent.branchAddress}}</span></td>
-                
+                <td><span> {{agent.branchManager.managerName}}</span></td>
                 <td><button class='btn btn-danger' (click)='deleteAgent(agent)'>Delete Agent</button></td>
-
+                <td><button class='btn btn-danger' (click)='clickMethod()'>Save</button></td>
             </tr>
         </tbody>
 

@@ -1,0 +1,17 @@
+.pad{
+    margin: 100px;
+    width: 380px;
+    height: 250px;
+    background-color: slategray;
+    color:snow;
+}
+
+div{
+    margin: 30px;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.right{
+    padding-left: 110px;
+}

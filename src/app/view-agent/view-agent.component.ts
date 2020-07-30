@@ -21,6 +21,12 @@ export class ViewAgentComponent implements OnInit {
     this.agents=response;
   }
 
+  clickMethod() {
+    if(confirm("Are you sure to save changes?")) {
+      console.log("Implement functionality here");
+    }
+  }
+
   deleteAgent(agent:Agent):void{
     this.service.deleteAgent(agent).subscribe(data=>{
       this.agents=this.agents.filter(x=>x!==agent);
@@ -31,6 +37,8 @@ export class ViewAgentComponent implements OnInit {
     const editField = event.target.textContent;
     this.agents[id][property] = editField;
     this.update(agent);
+    this.clickMethod();
+    window.location.reload();
   }
 
   update(agent:Agent){

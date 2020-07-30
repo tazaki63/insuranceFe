@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CreateAgentComponent } from './create-agent/create-agent.component';
 import { AgentService } from './service/agent.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CreateManagerComponent } from './create-manager/create-manager.component';
 import {BranchManagerService} from 'src/app/service/branchmanager.service';
 import { CreateBranchComponent } from './create-branch/create-branch.component';
@@ -34,15 +34,27 @@ import { BranchControlComponent } from './branch-control/branch-control.componen
 import { PolicyControlComponent } from './policy-control/policy-control.component';
 import { ManagerControlComponent } from './manager-control/manager-control.component';
 import { CprControlComponent } from './cpr-control/cpr-control.component';
-import { PaymentComponent } from './payment/payment.component';
+//import { PaymentComponent } from './payment/payment.component';
 import { ToastrModule } from 'ngx-toastr';
-import {NgxStripeModule} from '@nomadreservations/ngx-stripe';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NgxStripeModule} from 'ngx-stripe';
+import { PaymentService } from './service/payment.service';
 import {NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
-import {PaymentService} from 'src/app/service/payment.service';
-
-
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { PaymentPageComponent } from './payment-page/payment-page.component';
+import { ModalComponent } from './modal/modal.component';
+import { PaymentDetailsComponent } from './payment-details/payment-details.component';
+import { PaymentComponent } from './payment/payment.component';
+import {InterceptorService} from 'src/app/service/interceptor.service';
+import { LogoutComponent } from './logout/logout.component';
+import { ReportComponent } from './report/report.component';
+import { PayementDateComponent } from './payement-date/payement-date.component';
+import { PolicyDetailsCustComponent } from './policy-details-cust/policy-details-cust.component';
+import { AgentCommissionComponent } from './agent-commission/agent-commission.component';
+import { CommissionDetailsComponent } from './commission-details/commission-details.component';
+import { AgentCustomersComponent } from './agent-customers/agent-customers.component';
+import { FooterComponent } from './footer/footer.component';
+import { PoliciesComponent } from './policies/policies.component';
+import { CustomerPayComponent } from './customer-pay/customer-pay.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,10 +81,25 @@ import {PaymentService} from 'src/app/service/payment.service';
     PolicyControlComponent,
     ManagerControlComponent,
     CprControlComponent,
-    PaymentComponent
+    PaymentPageComponent,
+    ModalComponent,
+    PaymentDetailsComponent,
+    PaymentComponent,
+    LogoutComponent,
+    ReportComponent,
+    PayementDateComponent,
+    PolicyDetailsCustComponent,
+    AgentCommissionComponent,
+    CommissionDetailsComponent,
+    AgentCustomersComponent,
+    FooterComponent,
+    PoliciesComponent,
+    CustomerPayComponent,
+   
   ],
+  entryComponents : [ ModalComponent ] ,
   imports: [
-    BrowserModule,
+    BrowserModule, 
     AppRoutingModule, FormsModule, HttpClientModule, ReactiveFormsModule,
     NgbModalModule,
     BrowserAnimationsModule,
@@ -80,8 +107,13 @@ import {PaymentService} from 'src/app/service/payment.service';
     NgxStripeModule.forRoot('pk_test_51H5WsAHwWWtXeCa3kEgTUgTybpLIjlbZmC3qVJkSeUlX9cLQg67MhuUGWI4zFnm7fu0H1sW41iMcQSohlVdhPL4L00XmSXtOtw'),
    
   ],
-  providers: [AgentService, BranchManagerService, BranchService, PaymentService,
-     PolicyService, CustomerService, CeoService, CprService],
+  providers: [AgentService, BranchManagerService, BranchService,  
+     PolicyService, CustomerService, CeoService, CprService, PaymentService,
+      {provide:HTTP_INTERCEPTORS,
+        useClass:InterceptorService,
+        multi:true
+        }
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

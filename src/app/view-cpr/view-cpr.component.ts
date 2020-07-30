@@ -18,6 +18,12 @@ export class ViewCprComponent implements OnInit {
 
   }
 
+  clickMethod() {
+    if(confirm("Are you sure to save changes?")) {
+      console.log("Implement functionality here");
+    }
+  }
+
   cprSuccessResponse(response){
     this.cprs=response;
   }
@@ -31,6 +37,8 @@ export class ViewCprComponent implements OnInit {
     const editField = event.target.textContent;
     this.cprs[id][property] = editField;
     this.update(cpr);
+    this.clickMethod();
+    window.location.reload();
   }
 
   update(cpr:CPR){

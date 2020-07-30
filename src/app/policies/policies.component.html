@@ -1,0 +1,27 @@
+<table class = "table table-dark">
+
+    <thead>
+        <tr>
+            <th>Policy ID</th>
+            <th>Policy Term</th>
+            <th>Policy Amount</th>
+            <th>Policy Interest</th>
+            <th>Date</th>
+            <th>Policy Type</th>
+            <th>Maturity Amount</th>
+        </tr>
+    </thead>
+        <tbody>
+            <tr *ngFor='let policy of policies; let policyId=index'>
+                <td><span>{{policy.policyId}}</span></td>
+                <td><span >{{policy.policyTerm}}</span></td>
+                <td><span >{{policy.policyAmount}}</span></td>
+                <td><span >{{policy.policyInterest}}</span></td>
+                <td><span >{{policy.date}}</span></td>
+                <td><span >{{policy.policyType}}</span></td>
+                <td><span >{{policy.maturityAmount}}</span></td>
+
+            </tr>
+        </tbody>
+
+</table>
